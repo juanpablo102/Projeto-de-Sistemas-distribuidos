@@ -1,0 +1,6 @@
+# Pastas de build do Java/Maven
+bin/
+target/
+
+# Pasta do VSCode
+.vscode/
