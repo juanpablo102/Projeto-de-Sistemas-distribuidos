@@ -11,6 +11,7 @@ public class Cliente {
         String host = "localhost";
         int porta = 5004;
 
+        //criando socket 
         try (Socket socket = new Socket(host, porta);
              
              /* cria a varivel que sera responsavel por empacota o request 
@@ -22,15 +23,14 @@ public class Cliente {
             
              /*o desempacotamento(reply) é feito manualmente no formato binario */ 
              desempacotamento replyReader = 
-                     new desempacotamento(socket.getInputStream())
-             ) {
+                     new desempacotamento(socket.getInputStream())) {
             
             System.out.println("Conectado ao Servidor");
 
             //Enviar o request empacotado
             System.out.println("Enviando comando");
             requestWriter.writeUTF("GET_ALL_PASSAGEIROS");
-            requestWriter.flush(); // Garante o envio
+            requestWriter.flush(); // Garante o envio imediato
             
             //Recebe e Desempacota a resposta binária
             System.out.println("Aguardando resposta do servidor");

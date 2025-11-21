@@ -13,9 +13,6 @@ public class empacotamento extends OutputStream {
         this.dos = new DataOutputStream(destino);
     }
 
-    /**
-     * Define o protocolo de escrita manual.
-     */
     public void writePassageiros(Passageiro[] passageiros) throws IOException {
         //Escreve a quantidade de passageiros 
         dos.writeInt(passageiros.length);
@@ -29,8 +26,7 @@ public class empacotamento extends OutputStream {
         dos.flush(); // Garante o envio
     }
 
-    // Métodos obrigatórios da herança (apenas repassam para o stream original)
-    @Override
+    /*@Override
     public void write(int b) throws IOException {
         dos.write(b);
     }
@@ -38,5 +34,5 @@ public class empacotamento extends OutputStream {
     @Override
     public void close() throws IOException {
         dos.close();
-    }
+    }*/
 }

@@ -13,9 +13,6 @@ public class desempacotamento extends InputStream {
         this.dis = new DataInputStream(origem);
     }
 
-    /**
-     * Define o protocolo de leitura manual (ordem inversa da escrita).
-     */
     public Passageiro[] readPassageiros() throws IOException {
         //Lê a quantidade de passageiros
         int quantidade = dis.readInt();
@@ -33,8 +30,8 @@ public class desempacotamento extends InputStream {
         return passageiros;
     }
 
-    // Métodos obrigatórios da herança
-    @Override
+    // 
+    /*@Override
     public int read() throws IOException {
         return dis.read();
     }
@@ -42,5 +39,5 @@ public class desempacotamento extends InputStream {
     @Override
     public void close() throws IOException {
         dis.close();
-    }
+    }*/
 }
